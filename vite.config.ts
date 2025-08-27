@@ -7,7 +7,6 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-<<<<<<< HEAD
   build: {
     rollupOptions: {
       output: {
@@ -26,6 +25,4 @@ export default defineConfig({
     },
   },
   assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg', '**/*.webp'],
-=======
->>>>>>> 471872cc76fa825e93ef4532a3b0e01a8bce91de
 });
