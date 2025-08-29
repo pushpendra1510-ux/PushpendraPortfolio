@@ -1,24 +1,17 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { ArrowDown, MapPin, Mail, Phone, Github, Linkedin, Sparkles, Code, Zap } from 'lucide-react';
 import { PersonalInfo } from '../types';
 import { getAssetPath, handleAssetError } from '../utils/fileUtils';
-=======
-import React from 'react';
-import { ArrowDown, MapPin, Mail, Phone } from 'lucide-react';
-import { PersonalInfo } from '../types';
->>>>>>> 471872cc76fa825e93ef4532a3b0e01a8bce91de
 
 interface HeroProps {
   personalInfo: PersonalInfo;
 }
 
 const Hero: React.FC<HeroProps> = ({ personalInfo }) => {
-<<<<<<< HEAD
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
   const [displayText, setDisplayText] = useState('');
-  
+
   const titles = [
     "Creative Full Stack Developer",
     "Python Enthusiast",
@@ -27,21 +20,18 @@ const Hero: React.FC<HeroProps> = ({ personalInfo }) => {
     "Tech Innovator"
   ];
 
-=======
->>>>>>> 471872cc76fa825e93ef4532a3b0e01a8bce91de
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-<<<<<<< HEAD
   // Typing animation effect
   useEffect(() => {
     const currentTitle = titles[currentTextIndex];
     let charIndex = 0;
-    
+
     setIsTyping(true);
     setDisplayText('');
-    
+
     const typingInterval = setInterval(() => {
       if (charIndex < currentTitle.length) {
         setDisplayText(currentTitle.slice(0, charIndex + 1));
@@ -49,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({ personalInfo }) => {
       } else {
         clearInterval(typingInterval);
         setIsTyping(false);
-        
+
         // Wait before starting to delete
         setTimeout(() => {
           const deletingInterval = setInterval(() => {
@@ -101,7 +91,7 @@ const Hero: React.FC<HeroProps> = ({ personalInfo }) => {
           {/* Animated profile section */}
           <div className="relative mb-12">
             {/* Profile Image with animated border */}
-            <div className="relative w-40 h-40 mx-auto mb-8">
+            <div className="relative w-40 h-40 mx-auto mb-8 mt-6">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full animate-spin" style={{animationDuration: '3s'}}></div>
               <div className="absolute inset-2 bg-black rounded-full flex items-center justify-center">
                 <div className="w-32 h-32 bg-gradient-to-br from-cyan-600 to-purple-600 rounded-full flex items-center justify-center text-4xl font-bold text-white shadow-2xl overflow-hidden border-2 border-cyan-400">
@@ -215,78 +205,12 @@ const Hero: React.FC<HeroProps> = ({ personalInfo }) => {
         </div>
       </div>
 
-      {/* Enhanced scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-sm text-gray-400 animate-pulse">Scroll Down</span>
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-bounce"></div>
-          </div>
-        </div>
-      </div>
+      
 
       {/* Floating elements */}
       <div className="absolute top-20 left-10 w-4 h-4 bg-purple-500/50 rounded-full animate-ping"></div>
       <div className="absolute top-40 right-20 w-3 h-3 bg-pink-500/50 rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
       <div className="absolute bottom-40 left-20 w-2 h-2 bg-blue-500/50 rounded-full animate-ping" style={{animationDelay: '2s'}}></div>
-=======
-  return (
-    <section className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800 text-white flex items-center justify-center relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-xl"></div>
-        <div className="absolute top-1/2 left-1/2 w-60 h-60 bg-white/5 rounded-full blur-xl transform -translate-x-1/2 -translate-y-1/2"></div>
-      </div>
-
-      <div className="container mx-auto px-4 text-center relative z-10">
-        <div className="max-w-4xl mx-auto">
-          {/* Profile Image Placeholder */}
-          <div className="w-32 h-32 mx-auto mb-8 bg-white/20 rounded-full flex items-center justify-center text-4xl font-bold backdrop-blur-sm">
-            {personalInfo.name.split(' ').map(n => n[0]).join('')}
-          </div>
-
-          {/* Main Content */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 animate-fade-in">
-            {personalInfo.name}
-          </h1>
-          
-          <p className="text-xl md:text-2xl mb-8 text-blue-100 animate-fade-in-delay">
-            {personalInfo.title}
-          </p>
-
-          {/* Contact Info */}
-          <div className="flex flex-wrap justify-center gap-6 mb-12 text-blue-100">
-            <div className="flex items-center gap-2">
-              <MapPin className="w-5 h-5" />
-              <span>{personalInfo.location}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail className="w-5 h-5" />
-              <span>{personalInfo.email}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Phone className="w-5 h-5" />
-              <span>{personalInfo.phone}</span>
-            </div>
-          </div>
-
-          {/* CTA Button */}
-          <button
-            onClick={scrollToAbout}
-            className="bg-white/20 hover:bg-white/30 px-8 py-4 rounded-full text-white font-semibold transition-all duration-300 backdrop-blur-sm hover:scale-105 inline-flex items-center gap-2"
-          >
-            Explore My Work
-            <ArrowDown className="w-5 h-5 animate-bounce" />
-          </button>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="w-6 h-6 text-white/60" />
-      </div>
->>>>>>> 471872cc76fa825e93ef4532a3b0e01a8bce91de
     </section>
   );
 };

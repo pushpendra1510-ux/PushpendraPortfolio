@@ -1,0 +1,18 @@
+const projects = [
+  {
+    name: 'Project 1',
+    description: 'This is the first project.',
+    image: '/images/project1.png', // Updated image path
+    technologies: ['React', 'Node.js'],
+    liveDemo: 'https://example.com/project1',
+    code: 'https://github.com/user/project1',
+  },
+  {
+    name: 'Project 2',
+    description: 'This is the second project.',
+    image: '/images/project2.png',
+    technologies: ['Python', 'Django'],
+    liveDemo: 'https://example.com/project2',
+    code: 'https://github.com/user/project2',
+  },
+];
